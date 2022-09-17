@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gestion'
+    'gestion',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # VARIABLES CREADAS MANUALMENTE
 AUTH_USER_MODEL='gestion.Usuario'
+
+#CORREO
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = environ.get('EMAIL_USERNAME')
+EMAIL_HOST_PASSWORD = environ.get('EMAIL_PASSWORD')
+#en el caso de usar un correo coorporativo consultar con el
+#administrador
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+#Poner un prefijo en el titulo del correo electronico
+EMAIL_SUBJECT_PREFIX = 'PROJECTO ALBUM'

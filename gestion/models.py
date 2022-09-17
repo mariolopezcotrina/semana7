@@ -58,7 +58,7 @@ class Figura(models.Model):
 
 class Registro(models.Model):
     numeroVeces = models.IntegerField(db_column='num_veces', null=False)
-    tipo = models.CharField(choices=(['NORMAL','NORMAL'],['ESPECIAL', 'ESPECIAL'],['ESCUDO','ESCUDO']))
+    tipo = models.CharField(max_length=25,choices=(['NORMAL','NORMAL'],['ESPECIAL', 'ESPECIAL'],['ESCUDO','ESCUDO']))
     # RELACIONES
     figura = models.ForeignKey(to=Figura, on_delete=models.PROTECT, related_name='figura_registros')
     usuario = models.ForeignKey(to=Usuario, on_delete=models.PROTECT, related_name='usuario_registros')
